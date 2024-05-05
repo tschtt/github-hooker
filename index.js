@@ -26,9 +26,9 @@ async function handler (request, response) {
         try {
             body = JSON.parse(body)
             
-            if(body.hook.config.secret !== SECRET) {
-                throw new Error(`The secret sent is incorrect...`)
-            }
+            // if(body.hook.config.secret !== SECRET) {
+            //     throw new Error(`The secret sent is incorrect...`)
+            // }
 
             if(body.repository.name === 'segundo-subsuelo') {
                 exec('bash ~/scripts/build-segundo-subsuelo.sh', (error, stdout, stderr) => {
